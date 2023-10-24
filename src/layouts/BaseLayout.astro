@@ -1,0 +1,41 @@
+---
+const { title } = Astro.props;
+---
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+    <slot />
+	</body>
+</html>
+
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap');
+
+	:root {
+		--bg: #252E42;
+		--yellow: #BDAB4D;
+		--blue: #0098DA;
+		--ligth: #E6F4F1;
+		--light75: #E6F4F1BF;
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		background-color: var(--bg);
+		font-family: 'IBM Plex Mono', monospace;
+		color: var(--ligth);
+		&>main {
+			margin: auto;
+			padding: 1rem;
+			width: 80rem;
+			max-width: calc(100svw - 2rem);
+			line-height: 1.6;
+		}
+	}
+</style>
