@@ -1,0 +1,69 @@
+[
+  {
+    "name": "Clone Pato",
+    "description": "Web-based game inspired by the classic game Snake, created for KuroJam event.",
+    "image": "clonepato.webp",
+    "url": "https://clone-pato.thefront.dev",
+    "technologies": [
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ]
+  },
+  {
+    "name": "Broncos en Español",
+    "description": "Unofficial Denver Broncos Spanish Page, where you can check upcoming games, results, and community information about the Denver Broncos in Spanish.",
+    "image": "broncosespanol.webp",
+    "url": "https://broncosespanol.com",
+    "technologies": [
+      "Angular",
+      "HTML",
+      "CSS"
+    ]
+  },
+  {
+    "name": "Gentleman Programming Hackathon 2022",
+    "description": "Design and development of a landing page for the 2022 hackathon hosted by the Gentleman Programming Twitch channel.",
+    "image": "gphackathon.webp",
+    "url": "https://gentleman-programming-hackathon.netlify.app/hackathon",
+    "technologies": [
+      "React",
+      "HTML",
+      "CSS",
+      "Figma",
+      "CorelDraw"
+    ]
+  },
+  {
+    "name": "Rick and Morty Challenge",
+    "description": "Design and development of the landing page for the entry challenge of Gentleman Programming's 2022 hackathon.",
+    "image": "rnmchallenge.webp",
+    "url": "https://gentleman-programming-hackathon.netlify.app/ricknmorty-challenge",
+    "technologies": [
+      "React",
+      "HTML",
+      "CSS",
+      "Figma"
+    ]
+  },
+  {
+    "name": "Trotamundos",
+    "description": "The project is the final assignment for the UX/UI design course at Coderhouse.",
+    "image": "trotamundos.webp",
+    "url": "https://www.behance.net/gallery/149300353/Trotamundos-App-Proyecto-Coder-House-UXUI-2022",
+    "technologies": [
+      "Figma",
+      "CorelDraw"
+    ]
+  },
+  {
+    "name": "Sweet Noise Studio",
+    "description": "Design proposal for the Sweet Noise Studio website.",
+    "image": "snstudio.webp",
+    "url": "https://www.behance.net/gallery/152504619/Sweet-Noise-Studio-Website-UXUI-Design",
+    "technologies": [
+      "Figma",
+      "CorelDraw"
+    ]
+  }
+]

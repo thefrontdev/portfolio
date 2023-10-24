@@ -1,0 +1,35 @@
+[
+  {
+    "name": "ManzDev",
+    "description": "Profesor de programación, creador de CSS, hater oficial de React, le gustan las galletitas.",
+    "technologies": "JS, CSS, HTML, Web components",
+    "funko": "manz.webp",
+    "socials": [
+      {
+        "name": "Web",
+        "url": "https://manz.dev",
+        "icon": "web"
+      },
+      {
+        "name": "Twitch",
+        "url": "https://www.twitch.tv/manzdev",
+        "icon": "twitch"
+      },
+      {
+        "name": "Youtube",
+        "url": "https://youtube.com/manzdev",
+        "icon": "youtube"
+      },
+      {
+        "name": "X (antes Twitter)",
+        "url": "https://x.com/manzdev",
+        "icon": "x"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.instagram.com/manzdev",
+        "icon": "instagram"
+      }
+    ]
+  }
+]

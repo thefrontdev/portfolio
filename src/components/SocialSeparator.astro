@@ -1,0 +1,62 @@
+---
+
+---
+<div class="separator">
+  <div class="separator-line"></div>
+  <div class="social">
+    <a href="https://www.linkedin.com/in/emmanuelbv/" target="_blank" rel="noopener noreferrer">
+      <img src="/images/linkedin.webp" alt="linkedin">
+    </a>
+    <a href="https://www.instagram.com/_frontdev/" target="_blank" rel="noopener noreferrer">
+      <img src="/images/instagram.webp" alt="instagram">
+    </a>
+    <a href="https://codepen.io/the_frontdev/" target="_blank" rel="noopener noreferrer">
+      <img src="/images/codepen.webp" alt="codepen">
+    </a>
+    <a href="https://the-frondev.github.io/" target="_blank" rel="noopener noreferrer">
+      <img src="/images/github.webp" alt="github">
+    </a>
+    <a href="https://twitch.tv/the_frontdev" target="_blank" rel="noopener noreferrer">
+      <img src="/images/twitch.webp" alt="twitch">
+    </a>
+    <a href="https://discord.gg/6aZFkP4GDV" target="_blank" rel="noopener noreferrer">
+      <img src="/images/discord.webp" alt="discord">
+    </a>
+  </div>
+  <div class="separator-line"></div>
+</div>
+
+<style>
+  .separator {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    & .separator-line {
+      width: min(33%, 30rem);
+      height: 0.25rem;
+      background: var(--yellow);
+      border-radius: 0.25rem;
+    }
+    & .social {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      & a {
+        margin: 0 0.5rem;
+        &:nth-child(even){
+          &:hover img {
+            filter: drop-shadow(0 0 0.25rem var(--yellow));
+          }
+        }
+        &:nth-child(odd){
+          &:hover img {
+            filter: drop-shadow(0 0 0.25rem var(--blue));
+          }
+        }
+    }
+  }
+}
+</style>

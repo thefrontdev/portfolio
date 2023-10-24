@@ -1,0 +1,38 @@
+<nav>
+  <a href="/">
+    <img class="logo" src="/images/logo.svg" alt="logo">
+  </a>
+  <ul>
+    <li><a href="/#home">Home</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#projects">Projects</a></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+		top: 0;
+    z-index: 2;
+    background: linear-gradient(to bottom, #202738 20%, transparent);
+    backdrop-filter: blur(0.25rem);
+    &>ul {
+      list-style: none;
+      display: inline-flex;
+      padding: 0;
+      &>li{
+        &>a {
+          text-decoration: none;
+          color: var(--ligth);
+        }
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+</style>

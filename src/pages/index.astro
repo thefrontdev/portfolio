@@ -1,0 +1,282 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+import SocialSeparator from '../components/SocialSeparator.astro';
+import ProjectCard from '../components/Project.astro';
+
+import projects from '../assets/projects.json';
+
+interface Project {
+	name: string;
+	description: string;
+	image: string;
+	url: string;
+	technologies: string[];
+}
+---
+
+<BaseLayout title="The Frontdev | Diseño y programación web">
+	<NavBar />
+	<main>
+		<section class="home" id="home">
+			<div class="info">
+				<hgroup>
+					<p class="hello">Hello there <span class="lightsaber"><img src="/images/lightsaber.svg" alt=""></span> I'm</p>
+					<h1 class="title">
+						<span>&lt;</span> 
+						Emmanuel <br> Bernal 
+						<span>&sol;&gt;</span></h1>
+					<h2 class="subtitle">Frontend Developer</h2>
+				</hgroup>
+				<div class="button">
+					<a href="/files/CV-Emmanuel-Bernal-Eng.pdf" class="btn-resume" target="_blank" download>Resume</a>
+				</div>
+			</div>
+			<div class="front-image">
+				<div class="square"></div>
+				<img class="front-funko" src="/images/frondevFunko.webp" alt="frontdev">
+			</div>
+		</section>
+		<SocialSeparator />
+		<section class="about" id="about">
+			<div class="photo">
+				<img src="/images/me_2.webp" alt="Emmanuel Bernal">
+			</div>
+			<div class="info">
+				<h2 class="title">Me...</h2>
+				<p>
+					I'm a Frontend Developer and UI Designer specializing in web application development using JavaScript, TypeScript, Angular, HTML, and CSS. I am passionate about programming and known for my creativity, punctuality, and responsibility. I excel in collaborative team environments and consistently demonstrate my commitment to achieving goals and overcoming challenges.
+					<br>
+					I have a personal project called "TheFrontdev," which is dedicated to sharing knowledge and continuous learning within the development community through Instagram and Twitch.
+				</p>
+			</div>
+		</section>
+		<section class="projects" id="projects">
+			<hgroup>
+				<h3 class="title">PROJECTS</h3>
+				<div class="subtitle">DEVELOPMENT & DESIGN</div>
+			</hgroup>
+			<div class="cards">
+				{projects.map((project: Project) => <ProjectCard project={project} />)}
+			</div>
+		</section>
+	</main>
+	<Footer />
+</BaseLayout>
+
+<style>
+	section {
+		margin: 4rem 0;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	.home {
+		width: 100%;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		.front-image {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			.square {
+				width: 29rem;
+				height: 29rem;
+				border-radius: 4rem;
+				border: 2rem solid #BDAB4D;
+				box-shadow: 0 0 2rem #BDAB4D80, 0 0 1.5rem #BDAB4D inset;
+				transform: rotate(75deg);
+				box-sizing: border-box;
+				margin-top: 3rem;
+			}
+			.front-funko {
+				position: relative;
+				z-index: 1;
+				margin-top: -31rem;
+				width: 28rem;
+				box-sizing: border-box;
+			}
+		}
+		.info {
+			.hello {
+				font-size: 1.5rem;
+				.lightsaber {
+					& img {
+						transform: rotate(-45deg);
+						margin: 0 0 -1rem -1.5rem;
+					}
+				}
+			}
+			.title {
+				font-size: 4rem;
+				font-weight: 700;
+				line-height: 1;
+				text-align: center;
+				margin-block: 0;
+				font-weight: 500;
+				color: var(--blue);
+				& span {
+					color: var(--yellow);
+					font-weight: 600;
+				}
+				& br {
+					content: "";
+					&::before {
+						content: "\A";
+						white-space: pre-line;
+						margin-left: 12rem;
+					}
+					&::after {
+						content: "";
+						margin-right: 12rem;
+					}
+				}
+			}
+			.subtitle {
+				text-align: center;
+				font-size: 2rem;
+				font-weight: 500;
+			}
+			.button {
+				text-align: right;
+				.btn-resume {
+					text-decoration: none;
+					background: var(--yellow);
+					padding: 0.5rem 1rem;
+					color: var(--light);
+					border-radius: 0.5rem;
+				}
+			}
+		}
+	}
+
+	.about {
+		width: 100%;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		align-items: center;
+		.photo {
+			order: 1;
+			text-align: center;
+			& img {
+				--size: 25rem;
+				--factor-scale: 1.35;
+
+				width: var(--size);
+				aspect-ratio: 1;
+				padding-top: calc(var(--size)/10);
+				border-radius: 0 0 100% 100%;
+				background: radial-gradient(
+					circle closest-side, 
+					var(--blue) 99%, transparent) 
+					50%/calc(100%/var(--factor-scale)) 100% no-repeat content-box;
+				-webkit-mask: linear-gradient(#000 0 0) no-repeat 
+				0 0/100% 50%,
+				radial-gradient(circle closest-side, var(--blue) 99%, transparent) 
+				50%/calc(100%/var(--factor-scale)) 100% no-repeat content-box;
+				transform: scale(var(--factor-scale));
+				transition: 0.5s;
+			}
+		}
+		.info {
+			order: 2;
+			.title {
+				margin-block: 0;
+				font-size: 2rem;
+				color: var(--yellow);
+			}
+			& p {
+				max-inline-size: 60ch;
+				font-size: 1rem;
+				text-wrap: balance;
+			}
+		}
+	}
+
+	.projects {
+		width: 100%;
+		box-sizing: border-box;
+		.title {
+			text-align: center;
+			font-weight: 500;
+			font-size: 8rem;
+			color: var(--blue);
+			margin-block: 0;
+		}
+		.subtitle {
+			text-align: center;
+			letter-spacing: 1.5rem;
+			margin-block: 0;
+			margin: -7rem auto 0;
+			background: var(--bg);
+			padding: 0.25rem 0;
+			position: relative;
+		}
+		.cards {
+			margin-top: 4rem;
+			width: 100%;
+			box-sizing: border-box;
+			display: grid;
+			place-items: center;
+			grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+			gap: 1rem; 
+			padding: 0 2rem;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.home {
+			.info {
+				.hello {
+				font-size: 1rem;
+				}
+				.title {
+					font-size: 3.25rem;
+					& br {
+						content: none;
+					}
+				}
+				.subtitle {
+					font-size: 1.25rem;
+				}
+				.button {
+					text-align: center;
+				}
+			}
+			.front-image {
+				display: none;
+			}
+		}
+		.about {
+			flex-direction: column;
+			.photo {
+				order: 2;
+				& img {
+					width: 80%;
+				}
+			}
+			.info {
+				order: 1;
+			}
+		}
+		.projects {
+			.title {
+				font-size: 4.5rem;
+			}
+			.subtitle {
+				letter-spacing: 0.5rem;
+				font-size: 0.75rem;
+				margin-top: -4.25rem;
+			}
+			.cards {
+				padding: 0;
+			}
+		}
+	}
+</style>

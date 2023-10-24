@@ -1,0 +1,73 @@
+---
+const { title } = Astro.props;
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta
+			name="description"
+			content="Hello there! I'm Emmanuel Bernal (The Frontdev) and I'm a Frontend Developer. Here you have a summary of projects and some of my activities."
+		/>
+		<link rel="canonical" href="https://thefront.dev" />
+		<meta property="og:url" content="http://thefront.dev" />
+		<meta property="og:type" content="website" />
+		<meta
+			property="og:title"
+			content="thefront.dev - Web developer and UI designer, and streamer - Emmanuel Bernal"
+		/>
+		<meta
+			property="og:description"
+			content="Hello there! I'm Emmanuel Bernal (The Frontdev) and I'm a Frontend Developer. Here you have a summary of projects and some of my activities."
+		/>
+		<meta property="og:image" content="https://thefront.dev/frontdev-social.png" />
+		<meta property="twitter:url" content="https://thefront.dev" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:creator" content="@the_frontdev" />
+		<meta
+			property="twitter:title"
+			content="thefront.dev - Web developer and UI designer, and streamer - Emmanuel Bernal"
+		/>
+		<meta
+			property="twitter:description"
+			content="Hello there! I'm Emmanuel Bernal (The Frontdev) and I'm a Frontend Developer. Here you have a summary of projects and some of my activities."
+		/>
+		<meta
+			property="twitter:image:src"
+			content="https://thefront.dev/frontdev-social.png"
+		/>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap");
+
+	:root {
+		--bg: #252e42;
+		--yellow: #bdab4d;
+		--blue: #0098da;
+		--ligth: #e6f4f1;
+		--light75: #e6f4f1bf;
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		background-color: var(--bg);
+		font-family: "IBM Plex Mono", monospace;
+		color: var(--ligth);
+		& > main {
+			margin: auto;
+			padding: 1rem;
+			width: 80rem;
+			max-width: calc(100svw - 2rem);
+			line-height: 1.6;
+		}
+	}
+</style>

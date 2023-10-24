@@ -1,0 +1,27 @@
+<svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_827_29)">
+<g filter="url(#filter0_d_827_29)">
+<path d="M17.0195 38.6862C16.4779 38.6862 15.9362 38.4695 15.5029 38.0362C14.6362 37.1695 14.6362 35.8695 15.5029 35.0029L43.6695 6.8362C44.5362 5.96953 45.8362 5.96953 46.7029 6.8362C47.5695 7.70286 47.5695 9.00286 46.7029 9.86953L18.5362 38.0362C18.1029 38.4695 17.5612 38.6862 17.0195 38.6862Z" fill="#0098DA" fill-opacity="0.75" shape-rendering="crispEdges"/>
+</g>
+<path d="M15.9362 38.6862C15.6112 38.6862 15.3945 38.5779 15.1779 38.3612C14.7445 37.9279 14.7445 37.2779 15.1779 36.8445L44.4279 7.59453C44.8612 7.1612 45.5112 7.1612 45.9445 7.59453C46.3779 8.02786 46.3779 8.67786 45.9445 9.1112L16.6945 38.3612C16.4779 38.5779 16.2612 38.6862 15.9362 38.6862Z" fill="#0098DA"/>
+<path d="M9.76122 42.2612L11.2779 43.7779L7.70288 47.3529L6.18622 45.8362L9.76122 42.2612Z" fill="#90A4AE"/>
+<path d="M16.4779 34.0279L19.5112 37.0612L9.21955 47.3529L6.18622 44.3195L16.4779 34.0279Z" fill="#90A4AE"/>
+<path d="M13.8779 36.6279L16.9112 39.6612L9.21955 47.3529L6.18622 44.3195L13.8779 36.6279ZM20.2696 30.2362L16.0446 34.4612L19.0779 37.4945L20.2696 36.3029V30.2362Z" fill="#37474F"/>
+<path d="M12.6862 35.4362L15.9362 38.6862L13.7695 40.8529L10.5195 37.6029L12.6862 35.4362Z" fill="#37474F"/>
+</g>
+<defs>
+<filter id="filter0_d_827_29" x="9.85287" y="1.1862" width="42.5" height="42.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="2.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.596078 0 0 0 0 0.854902 0 0 0 0.75 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_827_29"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_827_29" result="shape"/>
+</filter>
+<clipPath id="clip0_827_29">
+<rect width="52" height="52" fill="white" transform="translate(0.769547 0.769531)"/>
+</clipPath>
+</defs>
+</svg>
