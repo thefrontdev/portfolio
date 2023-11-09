@@ -20,25 +20,28 @@ interface Project {
 	<NavBar />
 	<main>
 		<section class="home" id="home">
-			<div class="info">
-				<hgroup>
-					<p class="hello">Hello there <span class="lightsaber"><img src="/images/lightsaber.svg" alt=""></span> I'm</p>
-					<h1 class="title">
-						<span>&lt;</span> 
-						Emmanuel <br> Bernal 
-						<span>&sol;&gt;</span></h1>
-					<h2 class="subtitle">Frontend Developer</h2>
-				</hgroup>
-				<div class="button">
-					<a href="/files/CV-Emmanuel-Bernal-Eng.pdf" class="btn-resume" target="_blank" download>Resume</a>
+			<div class="home-container">
+				<div class="info">
+					<hgroup>
+						<p class="hello">Hello there <span class="lightsaber"><img src="/images/lightsaber.svg" alt=""></span> I'm</p>
+						<h1 class="title">
+							<span>&lt;</span> 
+							Emmanuel <br> Bernal 
+							<span>&sol;&gt;</span></h1>
+						<h2 class="subtitle">Frontend Developer</h2>
+					</hgroup>
+					<div class="button">
+						<a href="/files/CV-Emmanuel-Bernal-Eng.pdf" class="btn-resume" target="_blank" download>Resume</a>
+					</div>
+				</div>
+				<div class="front-image">
+					<div class="square"></div>
+					<div class="funko-funko"></div>
+					<img class="front-funko" src="/images/frondevFunko.webp" alt="frontdev">
 				</div>
 			</div>
-			<div class="front-image">
-				<div class="square"></div>
-				<img class="front-funko" src="/images/frondevFunko.webp" alt="frontdev">
-			</div>
+			<SocialSeparator />
 		</section>
-		<SocialSeparator />
 		<section class="about" id="about">
 			<div class="photo">
 				<img src="/images/me_2.webp" alt="Emmanuel Bernal">
@@ -47,7 +50,7 @@ interface Project {
 				<h2 class="title">Me...</h2>
 				<p>
 					I'm a Frontend Developer and UI Designer specializing in web application development using JavaScript, TypeScript, Angular, HTML, and CSS. I am passionate about programming and known for my creativity, punctuality, and responsibility. I excel in collaborative team environments and consistently demonstrate my commitment to achieving goals and overcoming challenges.
-					<br>
+					<br><br>
 					I have a personal project called "TheFrontdev," which is dedicated to sharing knowledge and continuous learning within the development community through Instagram and Twitch.
 				</p>
 			</div>
@@ -57,8 +60,30 @@ interface Project {
 				<h3 class="title">PROJECTS</h3>
 				<div class="subtitle">DEVELOPMENT & DESIGN</div>
 			</hgroup>
+			{
+			projects.map((project: Project) => (
+				<div class={`info ${project.image.replace('.webp', '')}`}>
+					<h3>{project.name}</h3>
+					<p>{project.description}</p>
+					<div class="tecnologies">
+						{
+							project.technologies.map((technology: string) => (
+								<img src={`/images/technologies/${technology.toLowerCase()}.svg`} alt={technology}>
+							))
+						}
+					</div>
+					<a href={project.url} class="button-live" target="_blank" rel="noopener noreferrer">Live</a>
+				</div>
+			))
+			}
 			<div class="cards">
-				{projects.map((project: Project) => <ProjectCard project={project} />)}
+				{
+					projects.map((project: Project, index: number) => (
+						<label class="project" style={`--bg: url(/images/projects/${project.image})`}>
+							{index === 0 ? <input type="radio" name="project" id={project.image.replace('.webp', '')} checked> : <input type="radio" name="project" id={project.image.replace('.webp', '')}>}
+						</label>
+					))
+				}
 			</div>
 		</section>
 	</main>
@@ -67,39 +92,46 @@ interface Project {
 
 <style>
 	section {
-		margin: 4rem 0;
+		height: 100vh;
+		box-sizing: border-box;
 		&:first-child {
-			margin-top: 0;
+			height: calc(100vh - 6rem);
 		}
 	}
 
 	.home {
 		width: 100%;
-		box-sizing: border-box;
 		display: flex;
-		align-items: center;
+		flex-direction: column;
 		justify-content: space-around;
-		.front-image {
+		.home-container {
+			width: 100%;
+			box-sizing: border-box;
 			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			.square {
-				width: 29rem;
-				height: 29rem;
-				border-radius: 4rem;
-				border: 2rem solid #BDAB4D;
-				box-shadow: 0 0 2rem #BDAB4D80, 0 0 1.5rem #BDAB4D inset;
-				transform: rotate(75deg);
-				box-sizing: border-box;
-				margin-top: 3rem;
-			}
-			.front-funko {
-				position: relative;
-				z-index: 1;
-				margin-top: -31rem;
-				width: 28rem;
-				box-sizing: border-box;
-			}
+			align-items: center;
+			justify-content: space-around;
+			.front-image {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				.square {
+					width: 29rem;
+					height: 29rem;
+					border-radius: 4rem;
+					border: 2rem solid #BDAB4D;
+					box-shadow: 0 0 2rem #BDAB4D80, 0 0 1.5rem #BDAB4D inset;
+					transform: rotate(75deg);
+					box-sizing: border-box;
+					margin-top: 3rem;
+				}
+				.front-funko {
+					position: relative;
+					z-index: 1;
+					margin-top: -31rem;
+					width: 28rem;
+					box-sizing: border-box;
+				}
+		}
 		}
 		.info {
 			.hello {
@@ -196,12 +228,59 @@ interface Project {
 				font-size: 1rem;
 				text-wrap: balance;
 			}
+			& a {
+				text-decoration: none;
+				padding: 0.5rem 1rem;
+				background: #fafafa;
+				border-radius: 0.5rem;
+			}
 		}
 	}
 
 	.projects {
 		width: 100%;
+		height: 80vh;
 		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		background: linear-gradient(to right, var(--bg), #252e4280, var(--bg)), linear-gradient(to bottom, var(--bg), #252e4280, var(--bg)), var(--bg-img) no-repeat center center/cover;
+		&:has(#clonepato:checked) {
+			--bg-img: url(/images/projects/clonepato-bg.webp);
+			& .clonepato {
+				--show: block;
+			}
+		}
+		&:has(#broncosespanol:checked) {
+			--bg-img: url(/images/projects/broncosespanol-bg.webp);
+			& .broncosespanol {
+				--show: block;
+			}
+		}
+		&:has(#gphackathon:checked) {
+			--bg-img: url(/images/projects/gphackathon-bg.webp);
+			& .gphackathon {
+				--show: block;
+			}
+		}
+		&:has(#rnmchallenge:checked) {
+			--bg-img: url(/images/projects/rnmchallenge-bg.webp);
+			& .rnmchallenge {
+				--show: block;
+			}
+		}
+		&:has(#trotamundos:checked) {
+			--bg-img: url(/images/projects/trotamundos-bg.webp);
+			& .trotamundos {
+				--show: block;
+			}
+		}
+		&:has(#snstudio:checked) {
+			--bg-img: url(/images/projects/snstudio-bg.webp);
+			& .snstudio {
+				--show: block;
+			}
+		}
 		.title {
 			text-align: center;
 			font-weight: 500;
@@ -214,19 +293,63 @@ interface Project {
 			letter-spacing: 1.5rem;
 			margin-block: 0;
 			margin: -7rem auto 0;
-			background: var(--bg);
+			background: linear-gradient(to right, var(--bg) 30%, #252e42cc, var(--bg) 70%);
 			padding: 0.25rem 0;
 			position: relative;
 		}
+		.info {
+			--show: none;
+			display: var(--show);
+			min-height: 30vh;
+			padding: 0 3rem;
+			& h3 {
+				font-size: 1.5rem;
+			}
+			& p {
+				width: min(100%, 50rem);
+				margin-block: 0;
+				font-weight: 500;
+			}
+			& .tecnologies {
+				display: flex;
+				gap: 1rem;
+				margin: 2rem 0;
+			}
+			& .button-live {
+				padding: 0.5rem 1rem;
+				background: var(--yellow);
+				border-radius: 0.25rem;
+				text-decoration: none;
+				color: var(--ligth);
+				box-shadow: 0 0 0.5rem #0e0e0e80;
+			}
+
+		}
 		.cards {
-			margin-top: 4rem;
 			width: 100%;
-			box-sizing: border-box;
-			display: grid;
-			place-items: center;
-			grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
-			gap: 1rem; 
-			padding: 0 2rem;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 1rem;
+			.project {
+				width: 12rem;
+				height: 12rem;
+				box-sizing: border-box;
+				border-radius: 1rem;
+				background: linear-gradient(to bottom, #0e0e0ecc 100%, transparent), var(--bg) no-repeat center center/cover;
+				transform: scale(0.85);
+				transition: 0.5s;
+				cursor: pointer;
+				&:has(input:checked) {
+					border: 0.25rem solid var(--yellow);
+					background: var(--bg) no-repeat center center/cover;
+					transform: scale(1);
+					box-shadow: 0.25rem 0.25rem 0.5rem #0e0e0e80;
+				}
+				& input {
+					display: none;
+				}
+			}
 		}
 	}
 
@@ -276,6 +399,10 @@ interface Project {
 			}
 			.cards {
 				padding: 0;
+				.project {
+					width: 10rem;
+					height: 10rem;
+				}
 			}
 		}
 	}

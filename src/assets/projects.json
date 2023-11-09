@@ -3,7 +3,7 @@
     "name": "Clone Pato",
     "description": "Web-based game inspired by the classic game Snake, created for KuroJam event.",
     "image": "clonepato.webp",
-    "url": "https://clone-pato.thefront.dev",
+    "url": "https://the-frondev.github.io/clone-duck/",
     "technologies": [
       "JavaScript",
       "HTML",
@@ -48,7 +48,7 @@
   },
   {
     "name": "Trotamundos",
-    "description": "The project is the final assignment for the UX/UI design course at Coderhouse.",
+    "description": "The project is the final assignment for the UX/UI design course at Coderhouse. It's about an app for travelers to share their experiences.",
     "image": "trotamundos.webp",
     "url": "https://www.behance.net/gallery/149300353/Trotamundos-App-Proyecto-Coder-House-UXUI-2022",
     "technologies": [
@@ -58,7 +58,7 @@
   },
   {
     "name": "Sweet Noise Studio",
-    "description": "Design proposal for the Sweet Noise Studio website.",
+    "description": "Design proposal for an Recording Studio (Sweet Noise Studio) website.",
     "image": "snstudio.webp",
     "url": "https://www.behance.net/gallery/152504619/Sweet-Noise-Studio-Website-UXUI-Design",
     "technologies": [
