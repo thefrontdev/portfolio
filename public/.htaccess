@@ -1,0 +1,4 @@
+#Force www:
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^thefront.dev [NC]
+RewriteRule ^(.*)$ https://www.thefront.dev/$1 [L,R=301,NC]
