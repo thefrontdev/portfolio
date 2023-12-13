@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import NavBar from '../components/NavBar.astro';
 import Footer from '../components/Footer.astro';
 import SocialSeparator from '../components/SocialSeparator.astro';
-import ProjectCard from '../components/Project.astro';
 
 import projects from '../assets/projects.json';
 
@@ -31,7 +30,7 @@ interface Project {
 						<h2 class="subtitle">Frontend Developer</h2>
 					</hgroup>
 					<div class="button">
-						<a href="/files/CV-Emmanuel-Bernal-Eng.pdf" class="btn-resume" target="_blank" download>Resume</a>
+						<a href="/files/CV-Emmanuel-Bernal-Eng.pdf" class="btn-resume" target="_blank">Resume</a>
 					</div>
 				</div>
 				<div class="front-image">
@@ -44,7 +43,7 @@ interface Project {
 		</section>
 		<section class="about" id="about">
 			<div class="photo">
-				<img src="/images/me_2.webp" alt="Emmanuel Bernal">
+				<img src="/images/me.svg" alt="Emmanuel Bernal">
 			</div>
 			<div class="info">
 				<h2 class="title">Me...</h2>
@@ -91,6 +90,11 @@ interface Project {
 </BaseLayout>
 
 <style>
+	.main {
+		scroll-behavior: smooth;
+		scroll-snap-type: y mandatory;
+		scroll-snap-align: start;
+	}
 	section {
 		height: 100vh;
 		box-sizing: border-box;
@@ -104,17 +108,17 @@ interface Project {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-		.home-container {
+		& .home-container {
 			width: 100%;
 			box-sizing: border-box;
 			display: flex;
 			align-items: center;
 			justify-content: space-around;
-			.front-image {
+			& .front-image {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				.square {
+				& .square {
 					width: 29rem;
 					height: 29rem;
 					border-radius: 4rem;
@@ -124,7 +128,7 @@ interface Project {
 					box-sizing: border-box;
 					margin-top: 3rem;
 				}
-				.front-funko {
+				& .front-funko {
 					position: relative;
 					z-index: 1;
 					margin-top: -31rem;
@@ -133,17 +137,17 @@ interface Project {
 				}
 		}
 		}
-		.info {
-			.hello {
+		& .info {
+			& .hello {
 				font-size: 1.5rem;
-				.lightsaber {
+				& .lightsaber {
 					& img {
 						transform: rotate(-45deg);
 						margin: 0 0 -1rem -1.5rem;
 					}
 				}
 			}
-			.title {
+			& .title {
 				font-size: 4rem;
 				font-weight: 700;
 				line-height: 1;
@@ -168,19 +172,25 @@ interface Project {
 					}
 				}
 			}
-			.subtitle {
+			& .subtitle {
 				text-align: center;
 				font-size: 2rem;
 				font-weight: 500;
 			}
-			.button {
+			& .button {
 				text-align: right;
-				.btn-resume {
+				& .btn-resume {
 					text-decoration: none;
-					background: var(--yellow);
 					padding: 0.5rem 1rem;
-					color: var(--light);
 					border-radius: 0.5rem;
+					border: 0.125rem solid var(--yellow);
+					transition: 0.3s;
+					background: var(--bg);
+					color: var(--yellow);
+					&:hover {
+						background: var(--yellow);
+						color: var(--bg);
+					}
 				}
 			}
 		}
@@ -193,15 +203,15 @@ interface Project {
 		align-items: center;
 		justify-content: space-around;
 		align-items: center;
-		.photo {
+		& .photo {
 			order: 1;
 			text-align: center;
 			& img {
 				--size: 25rem;
-				--factor-scale: 1.35;
+				/* --factor-scale: 1.35;*/
 
 				width: var(--size);
-				aspect-ratio: 1;
+				/* aspect-ratio: 1;
 				padding-top: calc(var(--size)/10);
 				border-radius: 0 0 100% 100%;
 				background: radial-gradient(
@@ -213,12 +223,12 @@ interface Project {
 				radial-gradient(circle closest-side, var(--blue) 99%, transparent) 
 				50%/calc(100%/var(--factor-scale)) 100% no-repeat content-box;
 				transform: scale(var(--factor-scale));
-				transition: 0.5s;
+				transition: 0.5s;*/
 			}
 		}
-		.info {
+		& .info {
 			order: 2;
-			.title {
+			& .title {
 				margin-block: 0;
 				font-size: 2rem;
 				color: var(--yellow);
@@ -281,14 +291,14 @@ interface Project {
 				--show: block;
 			}
 		}
-		.title {
+		& .title {
 			text-align: center;
 			font-weight: 500;
 			font-size: 8rem;
 			color: var(--blue);
 			margin-block: 0;
 		}
-		.subtitle {
+		& .subtitle {
 			text-align: center;
 			letter-spacing: 1.5rem;
 			margin-block: 0;
@@ -297,7 +307,7 @@ interface Project {
 			padding: 0.25rem 0;
 			position: relative;
 		}
-		.info {
+		& .info {
 			--show: none;
 			display: var(--show);
 			min-height: 30vh;
@@ -317,21 +327,27 @@ interface Project {
 			}
 			& .button-live {
 				padding: 0.5rem 1rem;
-				background: var(--yellow);
+				background: var(--bg);
 				border-radius: 0.25rem;
 				text-decoration: none;
-				color: var(--ligth);
+				color: var(--yellow);
 				box-shadow: 0 0 0.5rem #0e0e0e80;
+				border: 0.125rem solid var(--yellow);
+				transition: 0.5s;
+				&:hover {
+					background: var(--yellow);
+					color: var(--bg);
+				}
 			}
 
 		}
-		.cards {
+		& .cards {
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
 			gap: 1rem;
-			.project {
+			& .project {
 				width: 12rem;
 				height: 12rem;
 				box-sizing: border-box;
@@ -355,53 +371,78 @@ interface Project {
 
 	@media screen and (max-width: 768px) {
 		.home {
-			.info {
-				.hello {
-				font-size: 1rem;
-				}
-				.title {
-					font-size: 3.25rem;
-					& br {
-						content: none;
+			& .home-container{
+				& .info {
+					& .hello {
+					font-size: 1rem;
+					}
+					& .title {
+						font-size: 3.25rem;
+						& br {
+							content: none;
+						}
+					}
+					& .subtitle {
+						font-size: 1.25rem;
+					}
+					& .button {
+						text-align: center;
 					}
 				}
-				.subtitle {
-					font-size: 1.25rem;
+				& .front-image {
+					display: none;
 				}
-				.button {
-					text-align: center;
-				}
-			}
-			.front-image {
-				display: none;
 			}
 		}
 		.about {
 			flex-direction: column;
-			.photo {
+			height: max-content;
+			& .photo {
 				order: 2;
 				& img {
 					width: 80%;
 				}
 			}
-			.info {
+			& .info {
 				order: 1;
 			}
 		}
 		.projects {
-			.title {
+			height: max-content;
+			& .title {
 				font-size: 4.5rem;
 			}
-			.subtitle {
+			& .subtitle {
 				letter-spacing: 0.5rem;
 				font-size: 0.75rem;
 				margin-top: -4.25rem;
 			}
-			.cards {
+			& .info {
+				padding: 2rem 0;
+			}
+			& .cards {
 				padding: 0;
-				.project {
+				& .project {
 					width: 10rem;
 					height: 10rem;
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 400px) {
+		.projects {
+			& .title {
+				font-size: 4rem;
+			}
+			& .subtitle {
+				margin-top: -4rem;
+			}
+			& .cards {
+				padding: 0;
+				& .project {
+					width: 8.75rem;
+					height: 8.75rem;
+					aspect-ratio: 1;
 				}
 			}
 		}
