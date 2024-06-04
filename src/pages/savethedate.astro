@@ -1,0 +1,347 @@
+---
+---
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Save The Date A&E</title>
+  </head>
+  <body>
+    <main>
+      <div class="images">
+        <div class="photo-frame">
+          <div class="photo">
+            <img src="/images/funkos.webp" alt="nuestra boda">
+          </div>
+          <p>Nuestra Boda</p>
+        </div>
+        <img id="logo" src="/images/logo.webp" alt="A&E">
+      </div>
+      <div class="info">
+        <h1>Alondra y Emmanuel</h1>
+        <h2>Save the Date</h2>
+        <p id="date"><span>10</span> de Agosto de <span>2024</span></p>
+        <div class="countdown">
+          <span id="days">00</span>
+          <span id="hours">00</span>
+          <span id="minutes">00</span>
+          <span id="seconds">00</span>
+        </div>
+        <p>Agrégalo a tu calendario</p>
+        <div class="calendars">
+          <a href="/files/BodaA&E.ics" target="_blank" rel="noopener noreferrer" download>iOS y PC</a>
+          <a href="https://calendar.app.google/ijeq6SphW5oFfaKt5" target="_blank" rel="noopener noreferrer">Google</a>
+        </div>
+        <div class="locations">
+          <div class="card">
+            <p id="title">Ceremonia religiosa</p>
+            <img src="/images/iglesia.webp" alt="Parroquia Nuestra Señora del Pilar">
+            <p>Parroquia Nuestra Señora del Pilar</p>
+            <p>04:00 P.M.</p>
+            <div class="links">
+              <a href="https://maps.app.goo.gl/t1xLhwZyVkR2Nu7M7" target="_blank" rel="noopener noreferrer">Ver en mapa</a>
+              <a href="https://www.waze.com/es/live-map/directions/mx/mex./zaragoza-de-guadalupe/parroquia-nuestra-senora-del-pilar?to=place.ChIJV1oeVw2OzYURVSdVgrmF7Mo" target="_blank" rel="noopener noreferrer">Llegar con Wase</a>
+            </div>
+          </div>
+          <div class="card">
+            <p id="title">Recepción</p>
+            <img src="/images/salon.webp" alt="Salón Jardín Los Agapantos">
+            <p>Salón Jardín "Los Agapantos"</p>
+            <p>06:30 P.M.</p>
+            <div class="links">
+              <a href="https://maps.app.goo.gl/PF3JZuQz1bU72QXK8" target="_blank" rel="noopener noreferrer">Ver en mapa</a>
+              <a href="https://www.waze.com/es/live-map/directions/mx/mex./xonacatlan/salon-jardin-los-agapantos?to=place.ChIJD_EDvE0L0oURm4DBvUI5xDs" target="_blank" rel="noopener noreferrer">Llegar con Wase</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <style>
+      @font-face {
+        font-family: "miama";
+        src: url('/fonts/miama.otf') format('opentype');
+      }
+      @font-face {
+        font-family: "georgia";
+        src: url('/fonts/georgia.ttf') format('truetype');
+      }
+
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 100dvh;
+        background: linear-gradient(#efe6df, #c9a990);
+        box-sizing: border-box;
+        padding: 1rem 2rem;
+      }
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        & .photo-frame {
+          width: 25rem;
+          background: #fafafa;
+          padding: 1rem 1rem 0;
+          box-sizing: border-box;
+          transform: rotate(-11deg);
+          box-shadow: 0 0 0.5rem #0e0e0e40;
+          & .photo {
+            width: 100%;
+            background: #d9d9d9;
+            padding: 1rem;
+            box-sizing: border-box;
+            display: grid;
+            place-content: center;
+            & img {
+              width: 20rem;
+            }
+          }
+          p {
+            text-align: center;
+            font-family: "miama";
+            font-size: 4rem;
+            margin-block: 0;
+            -webkit-text-stroke: 0.5px #000;
+          }
+        }
+        & #logo {
+          width: 11rem;
+          z-index: 1;
+          margin-top: -5rem;
+          margin-left: -2rem;
+          position: relative;
+          opacity: 0.85;
+        }
+        & .info {
+          width: 55%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          & h1 {
+            font-family: "miama";
+            font-size: 4rem;
+            font-weight: 400;
+            text-align: center;
+            margin-block: 0;
+            -webkit-text-stroke: 1px #000;
+          }
+          & h2 {
+            font-family: "georgia";
+            font-size: 1.125rem;
+            font-weight: 400;
+            text-align: center;
+            margin-block: 0;
+          }
+          & #date {
+            font-family: "georgia";
+            font-size: 1.5rem;
+            font-weight: 400;
+            text-align: center;
+            margin-block: 0;
+            & span {
+              font-size: 1.75rem;
+            }
+          }
+        }
+        & .countdown {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin: 0.5rem 0;
+          & span {
+            width: 3.25rem;
+            aspect-ratio: 1;
+            background: #d9d9d9;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "georgia";
+            font-size: 2rem;
+            box-sizing: border-box;
+            border: 0.125rem solid #fafafa;
+            border-bottom-width: 1rem;
+            box-shadow: 0 0 0.125rem #0e0e0e40;
+            &::before {
+              content: "";
+              font-size: 1.25rem;
+              font-family: "miama";
+              position: absolute;
+              top: 85%;
+            }
+            &#days {
+              transform: rotate(10deg);
+              &::before {
+                content: "días";
+              }
+            }
+            &#hours {
+              transform: rotate(-6deg);
+              &::before {
+                content: "horas";
+              }
+            }
+            &#minutes {
+              transform: rotate(-15deg);
+              &::before {
+                content: "minutos";
+              }
+            }
+            &#seconds {
+              transform: rotate(8deg);
+              &::before {
+                content: "segundos";
+              }
+            }
+          }
+        }
+        p {
+          font-family: "georgia";
+          font-size: 1rem;
+          font-weight: 400;
+          text-align: center;
+          margin-block: 0;
+        }
+        & .calendars {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 4rem;
+          margin: 0.5rem 0;
+          & a {
+            font-family: "georgia";
+            font-size: 0.75rem;
+            text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 2rem;
+            color: #000;
+            background: #fafafa;
+            text-align: center;
+            width: 45%;
+          }
+        }
+        & .locations {
+          display: flex;
+          justify-content: space-between;
+          gap: 2rem;
+          align-items: center;
+          & .card {
+            box-sizing: border-box;
+            padding: 0.5rem 0.75rem;
+            background: #fafafa;
+            border-radius: 1rem;
+            text-align: center;
+            width: 45%;
+            p {
+              font-family: "georgia";
+              font-size: 0.75rem;
+              font-weight: 500;
+              margin-block: 0;
+              &#title {
+                font-size: 1.25rem;
+                margin-bottom: 0.5rem;
+              }
+            }
+            img {
+              width: 12rem;
+              aspect-ratio: 1;
+            }
+            & .links {
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              gap: 1rem;
+              margin-top: 0.5rem;
+              a {
+                font-family: "georgia";
+                font-size: 0.75rem;
+                text-decoration: none;
+                padding: 0.25rem 0.5rem;
+                border-radius: 2rem;
+                color: #000;
+                background: #efe6df;
+                text-align: center;
+                width: 100%;
+                padding: 0.25rem 0.5rem;
+              }
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        body {
+          padding: 1rem;
+        }
+        main {
+          flex-direction: column;
+          & .images, & .info {
+            width: 100%;
+          }
+          & .images {
+            display: grid;
+            place-content: center;
+            & .photo-frame {
+              width: 22rem;
+            }
+          }
+          & .info {
+            & h1 {
+              text-align: left;
+            }
+            & .countdown, & .calendars {
+              margin: 1rem 0;
+            }
+            & .locations {
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 1rem;
+              & .card {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const days = document.querySelector('#days');
+        const hours = document.querySelector('#hours');
+        const minutes = document.querySelector('#minutes');
+        const seconds = document.querySelector('#seconds');
+
+        const targetDate = new Date('August 10, 2024 00:00:00');
+        const currentDate = new Date();
+        let diffTime = targetDate - currentDate;
+
+        const updateCountdown = () => {
+          const daysValue = Math.floor(diffTime / 1000 / 60 / 60 / 24);
+          const hoursValue = Math.floor(diffTime / 1000 / 60 / 60) % 24;
+          const minutesValue = Math.floor(diffTime / 1000 / 60) % 60;
+          const secondsValue = Math.floor((diffTime / 1000) % 60);
+
+          if (daysValue === 0 && hoursValue === 0) {
+            clearInterval(countdown);
+          }
+
+          days.innerHTML = daysValue < 10 ? '0' + daysValue : daysValue;
+          hours.innerHTML = hoursValue < 10 ? '0' + hoursValue : hoursValue;
+          minutes.innerHTML = minutesValue < 10 ? '0' + minutesValue : minutesValue;
+          seconds.innerHTML = secondsValue < 10 ? '0' + secondsValue : secondsValue;
+        }
+
+        const countdown = setInterval(() => {
+          updateCountdown();
+          diffTime -= 1000;
+          diffTime = Math.max(0, diffTime);
+        }, 1000);
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:front.dev.4@gmail.com
+DTSTAMP:20240214T000000Z
+DTSTART:20240810T220000Z
+DTEND:20240811T073000Z
+SUMMARY:Nuestra Boda Alondra y Emmanuel
+DESCRIPTION:Con la bendición de Dios y de nuestros padres nos complacemos en invitarte a Nuestra Boda, el día 10 de Agosto de 2024 \nLa ceremonia religiosa se llevará a cabo en la Parroquia Nuestra Señora del Pilar (https://maps.app.goo.gl/t1xLhwZyVkR2Nu7M7) a las 04:00 P.M. \nPosterior la recepción será en el Salón Jardin "Los Agapantos" (https://maps.app.goo.gl/PF3JZuQz1bU72QXK8) a las 06:30 P.M. \n\nPor favor confirma tu asistencia vía WhatsApp (wa.link/rskwog)
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
