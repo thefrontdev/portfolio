@@ -15,20 +15,22 @@
           <div class="photo">
             <img src="/images/funkos.webp" alt="nuestra boda">
           </div>
-          <p>Nuestra Boda</p>
+          <p>Nos casamos</p>
         </div>
         <img id="logo" src="/images/logo.webp" alt="A&E">
       </div>
       <div class="info">
-        <h1>Alondra y Emmanuel</h1>
-        <h2>Save the Date</h2>
-        <p id="date"><span>10</span> de Agosto de <span>2024</span></p>
+        <h1>Alondra <span>&amp;</span> Emmanuel</h1>
         <div class="countdown">
           <span id="days">00</span>
           <span id="hours">00</span>
           <span id="minutes">00</span>
           <span id="seconds">00</span>
         </div>
+        <p>Con la bendición de Dios y de nuestros padres<br>nos complacemos en invitarte a</p>
+        <p id="wedding">Nuestra Boda</p>
+        <p>el próximo</p>
+        <p id="date"><span>10</span> de Agosto de <span>2024</span></p>
         <p>Agrégalo a tu calendario</p>
         <div class="calendars">
           <a href="/files/BodaA&E.ics" target="_blank" rel="noopener noreferrer" download>iOS y PC</a>
@@ -37,7 +39,7 @@
         <div class="locations">
           <div class="card">
             <p id="title">Ceremonia religiosa</p>
-            <img src="/images/iglesia.webp" alt="Parroquia Nuestra Señora del Pilar">
+            <img src="/images/boda.png" alt="Parroquia Nuestra Señora del Pilar">
             <p>Parroquia Nuestra Señora del Pilar</p>
             <p>04:00 P.M.</p>
             <div class="links">
@@ -47,7 +49,7 @@
           </div>
           <div class="card">
             <p id="title">Recepción</p>
-            <img src="/images/salon.webp" alt="Salón Jardín Los Agapantos">
+            <img src="/images/danza.png" alt="Salón Jardín Los Agapantos">
             <p>Salón Jardín "Los Agapantos"</p>
             <p>06:30 P.M.</p>
             <div class="links">
@@ -56,8 +58,19 @@
             </div>
           </div>
         </div>
+        <div class="confirmation">
+          <p id="title">¿Nos acompañaras?</p>
+          <p>Por favor confirma tu asistencia</p>
+          <a href="http://wa.link/rskwog" target="_blank" rel="noopener noreferrer">
+          <img src="/images/logos_whatsapp-icon.svg" alt="whatsapp">
+          </a>
+        </div>
       </div>
     </main>
+    <footer>
+      <img src="/images/logoBoda.svg" alt="Boda Alondra y Emmanuel">
+      <p>Made with ❤️ by El Novio</a></p>
+    </footer>
 
     <style>
       @font-face {
@@ -76,12 +89,12 @@
         min-height: 100dvh;
         background: linear-gradient(#efe6df, #c9a990);
         box-sizing: border-box;
-        padding: 1rem 2rem;
       }
       main {
         display: flex;
         align-items: center;
         justify-content: space-around;
+        padding: 1rem 2rem 0;
         & .photo-frame {
           width: 25rem;
           background: #fafafa;
@@ -128,13 +141,17 @@
             text-align: center;
             margin-block: 0;
             -webkit-text-stroke: 1px #000;
+            & span {
+              font-size: 3rem;
+            }
           }
-          & h2 {
-            font-family: "georgia";
-            font-size: 1.125rem;
+          & #wedding {
+            font-family: "Miama";
+            font-size: 3rem;
             font-weight: 400;
             text-align: center;
             margin-block: 0;
+            -webkit-text-stroke: 1px #000;
           }
           & #date {
             font-family: "georgia";
@@ -142,6 +159,7 @@
             font-weight: 400;
             text-align: center;
             margin-block: 0;
+            margin: 0.5rem 0 1rem;
             & span {
               font-size: 1.75rem;
             }
@@ -151,7 +169,7 @@
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
-          margin: 0.5rem 0;
+          margin: 0.5rem 0 1.5rem;
           & span {
             width: 3.25rem;
             aspect-ratio: 1;
@@ -246,7 +264,7 @@
               }
             }
             img {
-              width: 12rem;
+              width: 8rem;
               aspect-ratio: 1;
             }
             & .links {
@@ -270,13 +288,52 @@
             }
           }
         }
+        & .confirmation {
+          margin: 1rem 0;
+          width: 100%;
+          box-sizing: border-box;
+          text-align: center;
+          background: #fafafa;
+          border-radius: 1rem;
+          padding: 1rem;
+          & p {
+            font-family: "georgia";
+            font-size: 1rem;
+            font-weight: 500;
+            margin-block: 0;
+            margin: 0.5rem 0;
+            &#title {
+              font-size: 1.25rem;
+              margin: 0;
+            }
+          }
+          & a img {
+            width: 3rem;
+          }
+        }
+      }
+      & footer {
+        background: #7a5e49;
+        text-align: center;
+        margin-top: 1rem;
+        padding: 0.5rem 0;
+        & img {
+          width: 4rem;
+        }
+        & p {
+          font-family: "georgia";
+          font-size: 0.25rem;
+          color: #d9d9d9;
+          font-weight: 400;
+          text-align: center;
+          margin-block: 0;
+          margin-top: 0.25rem;
+        }
       }
 
       @media screen and (max-width: 768px) {
-        body {
-          padding: 1rem;
-        }
         main {
+          padding: 0.5rem 1rem 0;
           flex-direction: column;
           & .images, & .info {
             width: 100%;
@@ -290,10 +347,13 @@
           }
           & .info {
             & h1 {
-              text-align: left;
+              font-size: 3.5rem;
             }
-            & .countdown, & .calendars {
+            & .calendars {
               margin: 1rem 0;
+            }
+            & .countdown {
+              margin: 0 0 1.75rem;
             }
             & .locations {
               flex-direction: column;
