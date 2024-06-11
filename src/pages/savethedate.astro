@@ -15,7 +15,7 @@
           <div class="photo">
             <img src="/images/funkos.webp" alt="nuestra boda">
           </div>
-          <p>Nos casamos &hearts;</p>
+          <p>Nos casamos</p>
         </div>
         <img id="logo" src="/images/logo.webp" alt="A&E">
       </div>
@@ -87,9 +87,6 @@
         min-height: 100%;
         background: linear-gradient(#efe6df, #c9a990);
         box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
       }
       main {
         display: flex;
@@ -97,7 +94,6 @@
         justify-content: space-around;
         padding: 1rem 2rem 0;
         height: 100%;
-        min-height: 100dvh;
         box-sizing: border-box;
         & .photo-frame {
           width: 25rem;
@@ -337,6 +333,9 @@
       }
 
       @media screen and (max-width: 768px) {
+        body {
+          height: 100%;
+        }
         main {
           padding: 0.5rem 1rem 0;
           flex-direction: column;
